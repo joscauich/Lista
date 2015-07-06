@@ -1,11 +1,12 @@
 package mx.edu.utcancun.josue.lista;
 
+import java.io.Serializable;
 import java.security.PrivateKey;
 
 /**
  * Created by Josue on 05/07/2015.
  */
-public class Pronostico {
+public class Pronostico implements Serializable{
     private String dia;
     private String estado;
     private String temperatura;

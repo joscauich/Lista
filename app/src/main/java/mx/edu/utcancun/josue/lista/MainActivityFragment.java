@@ -1,5 +1,6 @@
 package mx.edu.utcancun.josue.lista;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -45,7 +46,9 @@ public class MainActivityFragment extends Fragment {
         AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getActivity(), pronosticos.get(position).toString(),Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), MainActivity2Activity.class);
+                intent.putExtra("pronostico", pronosticos.get(position));
+                startActivity(intent);
             }
         };
         listView.setOnItemClickListener(itemClickListener);
